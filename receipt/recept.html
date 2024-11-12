@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="recept.css">
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="head_wrap">
+                <div class="logo">
+                    <img src="/assets/allrecipes-vector-logo-2021-1.png" alt="">
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Find a recipe or ingredient" class="search-input" oninput="suggestRecipes()">
+                    <button class="search-button" onclick="searchRecipes()">
+                        <img src="/assets/check.jpg" alt="Search">
+                    </button>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+                <button onclick="showFavorites()" class="view-favorites-button">View Favorites</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="favorites-section" style="display: none;">
+        <div class="container">
+            <h2>Your Favorites</h2>
+            <div id="favorites-grid" class="grid-container"></div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2>Recipe Results</h2>
+            <div id="recipe-grid" class="grid-container"></div>
+        </div>
+    </section>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="Recipe Image">
+            <p><strong>Preparation Time:</strong> <span id="modal-prep-time"></span></p>
+            <div id="modal-ingredients">
+                <h3>Ingredients:</h3>
+                <ul></ul>
+            </div>
+            <div id="modal-instructions">
+                <h3>Instructions:</h3>
+                <p></p>
+            </div>
+            <div id="modal-nutrition">
+                <h3>Nutrition Information:</h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="recept.js"></script>
+</body>
+</html>

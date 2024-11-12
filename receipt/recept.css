@@ -1,0 +1,422 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    margin-inline: auto;
+}
+.header{
+    margin-top: 10px;
+}
+.head_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    max-width: 400px;
+    height: 145px;
+}
+
+.search-button img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%; 
+    max-width: 600px;
+    position: relative; 
+}
+.search-input {
+  padding-left: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 300px; 
+    flex-grow: 1;
+}
+.search-button {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.search-button img {
+    width: 45px; 
+    height: 38px;
+    border-radius: 10px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    color: #FF5733;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    gap: 10px;
+}
+.login label{
+    cursor: pointer;
+}
+.login img {
+    width: 38px; 
+    height: 38px;
+}
+.content {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.03);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.grid-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.grid-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin: 5px 0;
+}
+
+.grid-item p strong {
+    color: #FF5733; 
+}
+
+.grid-item .description {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin-top: 10px;
+    line-height: 1.5;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-button:hover {
+    color: #000;
+}
+#modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+#modal-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.modal-content h3 {
+    color: #FF5733;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+} 
+#modal-ingredients ul {
+    text-align: left;
+    padding: 0;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+#modal-ingredients ul li {
+    margin-bottom: 5px;
+}
+#modal-instructions p {
+    text-align: left;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+#modal-nutrition p {
+    text-align: left;
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#modal-prep-time {
+    font-weight: bold;
+    color: #FF5733;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+}
+.suggestions {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: grey;
+    transition: color 0.3s;
+}
+.heart-icon.favorited {
+    color: red;
+}
+#login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#login-modal .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#login-modal input[type="text"],
+#login-modal input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-modal button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF5733;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-modal button:hover {
+    background-color: #e04a24;
+}
+
+.view-favorites-button {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-favorites-button:hover {
+    background-color: #ff2c2c;
+}
+.container h2 {
+    margin-left: 30px;
+}
+#favorites-grid p{
+    margin-left: 30px;
+}
+
+@media (max-width: 1000px) {
+    .head_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .search-container {
+        width: 400px;
+        margin-top: 10px;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .login {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        gap: 0;
+    }
+
+    .login label {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .head_wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    #favorites-section h2,
+#recipe-grid h2 {
+    font-size: 20px; 
+    margin: 10px 0; 
+}
+.container h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+    .search-container {
+        width: 300px;
+        margin-top: 10px;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .login {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        gap: 0;
+    }
+
+    .login label {
+        display: none;
+    }
+    .grid-item img {
+        height: 130px;
+    }
+
+    .grid-item h3 {
+        font-size: 16px;
+    }
+
+    .grid-item p, .grid-item .description {
+        font-size: 13px;
+    }
+}
+@media (max-width: 480px) {
+  
+    .login {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        gap: 0;
+    }
+
+    .login label {
+        display: none;
+    }
+
+    .grid-item h3 {
+        font-size: 16px;
+    }
+    .grid-item {
+        padding: 10px;
+    }
+
+    .grid-item img {
+        height: 120px;
+    }
+
+    .grid-item h3 {
+        font-size: 14px;
+    }
+
+    .grid-item p, .grid-item .description {
+        font-size: 12px;
+    }
+}
+

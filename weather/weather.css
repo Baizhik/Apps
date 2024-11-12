@@ -1,0 +1,254 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #9ad0f5, #68b0e8, #6dc2f9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px 0;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.weather-app {
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.search-bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.search-bar input {
+    width: 250px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+.search-bar button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+.current-weather {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+}
+.temperature {
+    font-size: 60px;
+    margin: 15px 0;
+}
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.day {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+.suggestions {
+    position: absolute;
+    top: 98%;
+    left: 80px;
+    background-color: white;
+    color: black;
+    width: 250px;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+.day p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.icon img {
+    width: 70px;
+    height: 70px;
+}
+#location-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#location-button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+#location-button:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.line {
+    height: 0.1px;
+    margin: 20px 0;
+    width: 100%;
+    border-top: 0.1px solid rgba(255, 255, 255, 0.3);
+}
+.unit-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.unit-toggle:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 540px) {
+    .weather-app {
+        width: 450px;
+        padding: 15px;
+    }
+    .temperature {
+        font-size: 32px;
+    }
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+    .weather-icon img {
+        width: 70px;
+        height: 70px;
+    }
+    .search-bar input {
+        width: 200px;
+    }
+    .search-bar button {
+        font-size: 15px;
+    }
+    .suggestions {
+        width: 200px;
+        left: 95px;
+    }
+    #location-button {
+        font-size: 14px;
+    }
+    .current-weather p {
+        font-size: 12px;
+    }
+    .forecast p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 490px) {
+    .weather-app {
+        width: 90vw;
+        padding: 15px;
+    }
+    .suggestions {
+        width: 200px;
+        left: 50px;
+    }
+    .temperature {
+        font-size: 32px;
+    }
+    .day {
+        font-size: 12px;
+    }
+    .search-bar button {
+        font-size: 16px;
+    }
+}
+@media (max-width: 361px) {
+    .weather-app {
+        width: 91vw;
+        padding: 15px;
+    }
+    .suggestions {
+        width: 200px;
+        right: 50px;
+    }
+    .temperature {
+        font-size: 32px;
+    }
+    .day {
+        font-size: 12px;
+    }
+    .search-bar button {
+        font-size: 16px;
+    }
+}
+@media (max-width: 415px) {
+    .suggestions {
+        width: 200px;
+        left: 60px;
+    }
+}
+@media (max-width: 431px) {
+    .suggestions {
+        width: 200px;
+        left: 70px;
+    }
+}

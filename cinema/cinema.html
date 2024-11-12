@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema App</title>
+    <link rel="stylesheet" href="cinema.css">
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="head_wrap">
+                <div class="logo">
+                    <a href="/cinema/cinema.html">
+                        <img src="/assets/netlix.jpg" alt="Logo" id="large_logo">
+                        <img src="/assets/netflix_adapt.webp" alt="" id="logo_adapt">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Find a film" class="search-input" oninput="suggestMovies()">
+                    <button class="search-button" onclick="searchMovies()">
+                        <img src="/assets/search.webp" alt="Search">
+                    </button>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+                <select id="sort-select" onchange="sortMovies()">
+                    <option value="" disabled hidden selected>Sort by</option> 
+                    <option value="popularity.desc">Popularity</option>
+                    <option value="release_date.desc">Release Date</option>
+                    <option value="vote_average.desc">Rating</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="trending-section">
+        <div class="container centered-content">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="slider-container">
+                <button class="slider-button left" onclick="scrollGridLeft('trending-grid')">&#10094;</button>
+                <div id="trending-grid" class="grid-container"></div>
+                <button class="slider-button right" onclick="scrollGridRight('trending-grid')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content" id="new-releases-section">
+        <div class="container centered-content">
+            <h2 class="section-title">New Releases</h2>
+            <div class="slider-container">
+                <button class="slider-button left" onclick="scrollGridLeft('new-releases-grid')">&#10094;</button>
+                <div id="new-releases-grid" class="grid-container"></div>
+                <button class="slider-button right" onclick="scrollGridRight('new-releases-grid')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content" id="search-results-section" style="display: none;">
+        <div class="container centered-content">
+            <h2 id="sorted-title" class="section-title" style="display: none;"></h2>
+            
+            <h2 class="section-title">Search Results</h2>
+            <div class="slider-container">
+                <button class="slider-button left" onclick="scrollGridLeft('search-results-grid')">&#10094;</button>
+                <div id="search-results-grid" class="grid-container"></div>
+                <button class="slider-button right" onclick="scrollGridRight('search-results-grid')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="watchlist-link">
+        <button onclick="toggleWatchlistView()">View Watchlist</button>
+    </div>
+    
+    <section class="content" id="watchlist-section" style="display: none;">
+        <div class="container centered-content">
+            <h2 class="section-title">My Watchlist</h2>
+            <div class="slider-container">
+                <button class="slider-button left" onclick="scrollGridLeft('watchlist-grid')">&#10094;</button>
+                <div id="watchlist-grid" class="grid-container"></div>
+                <button class="slider-button right" onclick="scrollGridRight('watchlist-grid')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="movie-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img id="modal-poster" src="" alt="Movie Poster" class="modal-poster">
+            <h2 id="modal-title"></h2>
+            <p id="modal-overview"></p>
+            <p id="modal-release-date"></p>
+            <p id="modal-runtime"></p>
+            <p id="modal-rating"></p>
+            <p id="modal-cast"></p>
+            <p id="modal-crew"></p>
+        </div>
+    </div>
+
+    <script src="cinema.js"></script>
+</body>
+</html>

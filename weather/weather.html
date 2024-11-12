@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="weather-app">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search city" />
+                    <button id="search-button">🔍</button>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+               
+                <div class="current-weather">
+                    <div class="weather-icon"></div>
+                    <div class="temperature"></div>
+                </div>
+                <div class="forecast">
+                </div>
+                <div class="line"></div>
+                <div>
+                    <button id="location-button">Get Current Location Weather</button>
+                </div>
+            </div>
+            <button id="unit-toggle" class="unit-toggle">°C / °F</button>
+        </div>    
+    </section>
+    
+    <script src="weather.js"></script>
+</body>
+</html>
